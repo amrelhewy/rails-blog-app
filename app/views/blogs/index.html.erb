@@ -1,0 +1,23 @@
+<%= render :partial => 'nav', :object => @user %>
+
+<div class="container-fluid c2">
+<% if @blogs.length == 0 %>
+<h1 class="mt-5">There are no blogs in this category :/</h1>
+<% end %>
+<div class="row mt-5 ml-2">
+<%= form_tag({controller: "blogs", action: "index"}, {:method=>"get"}) do %>
+ <%= select_tag "filter_genre", raw("<option>Select a Genre</option><option>Fashion</option><option>Music</option><option>Travel</option><option>Lifestyle</option><option>Sports</option><option>Fitness</option><option>DIY</option><option>Food</option><option>Parenting</option>"),class:'form-control sg'
+ %>
+  <%= submit_tag("Filter by Category",class:'btn btn-secondary mt-2') %>
+<% end %>
+</div>
+<% if @blogs.length>0%>
+<h1 class="mt-5">All Recent Blogs </h1>
+<% end %>
+<% @blogs.each do |b|%>
+<div class="row flex-column ml-1 blog mb-2">
+<h3><%= b.blog_name %> <h6>By <b><%= b.user.email %></b> <%= b.created_at.strftime("%d-%b-%Y, %I:%M %p") %></h6></h3> <h6><%= b.blog_genre %> Category</h6>
+<div><%= b.blog %></div>
+</div>
+<% end %>
+</div>

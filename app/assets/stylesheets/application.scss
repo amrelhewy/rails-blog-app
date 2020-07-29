@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+*/
+@import "bootstrap";
+.c1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.c2{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background: {
+        image: asset_url("back.jpg"); 
+     }
+}
+h1{
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ color: black;
+ font-weight: bold;
+ text-decoration: underline;
+ 
+}
+.mid{
+    justify-content: center;
+    align-items: center;
+}
+.area{
+    width: 600px;
+    
+}
+.blog{
+    border: 1px solid  darkslategray;
+    border-radius: 10px;
+    padding-left: 30px;
+    max-width: 70%;
+    max-height: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.blog h3{
+font-family: 'Times New Roman', Times, serif;
+text-decoration: underline;
+
+}
+.blog div{
+    font-family: fantasy
+}
+.sg{
+    width: 300px;
+}

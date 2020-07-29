@@ -1,0 +1,22 @@
+<%= render :partial => 'nav', :object => @user %>
+<div class="container-fluid c2 mid">
+<div >
+ <% if flash[:errors] %>
+<% flash[:errors].each do |e| %>
+<p class="text-danger"><%= e %></p>
+ <% end %>
+  <% end %>
+</div>
+<div class="row">
+<%= form_for @blog,url: blogs_path(@blog),html: { class: "form-group" } do |f| %>
+<input type="hidden" name="blogg[user_id]" value=<%= @user.id %>>
+
+  <%= f.text_field :blog_name,class: "form-control",placeholder:"Blog Name"  %><br />
+  <%= collection_select(:blogg, :blog_genre, @genres,:to_s,:to_s, {:include_blank => "Please select a Blog Genre"},class:'form-control')
+ %>
+  <%= f.text_area :blog,size: "60x12",class: "form-control mt-4",placeholder:"Blog .."  %><br />
+  <%= f.submit "Create Blog", class:'btn btn-warning' %>
+<% end %></div>
+
+
+

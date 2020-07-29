@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: foo
+  password: bar
+  host: mysqldbb
+  port: 3306
+
+development:
+  <<: *default
+  database: blog
+
+test:
+  <<: *default
+  database: blog
+
+production:
+  <<: *default
+  database: blog
